@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Autotier Status</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../storage/storage.css" type="text/css" rel="stylesheet">
+    <link href="autotierStatus.css" type="text/css" rel="stylesheet">
+    <script src="../base1/cockpit.js"></script>
+</head>
+
+<body>
+    <div class="pf-c-page">
+        <div class="pf-c-page__main" tabindex="-1">
+
+            <section class="pf-c-page__main-section pf-m-light">
+                <div class="pf-c-content">
+                    <h1>Autotier Status</h1>
+                    <div id="version"></div>
+                    <div id="result"></div>
+                    <br />
+                    <button id="button" class="pf-c-button pf-m-primary">Refresh</button>
+                </div>
+            </section>
+
+            <section class="pf-c-page__main-section">
+                <div class="pf-l-grid pf-m-gutter">
+                    <article class="pf-c-card">
+                        <div class="pf-c-card__header">
+                            <div class="pf-c-card__title">
+                                <h2>Combined</h2>
+                            </div>
+                        </div>
+                        <div class="pf-c-card__body" id="combinedError">
+                            <table class="ct-table pf-c-table pf-m-grid-md pf-m-compact">
+                                <thread>
+                                    <tr>
+                                        <th class="pf-m-width-30 pf-c-table__sort">
+                                            <span class="pf-c-table__textc bold-text">Path</span>
+                                        </th>
+                                        <th class="pf-m-width-30 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Capacity</span>
+                                        </th>
+                                        <th class="pf-m-width-30 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Usage / Quota</span>
+                                        </th>
+                                    </tr>
+                                </thread>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div id="combinedPath"></div>
+                                        </td>
+                                        <td>
+                                            <div id="combinedCapacity"></div>
+                                        </td>
+                                        <td>
+                                            <div class="pf-c-progress pf-m-singleline" id="show-percent">
+                                                <div class="pf-c-progress__status">
+                                                    <span id="combinedQuota"></span>
+                                                </div>
+                                                <div class="pf-c-progress__bar">
+                                                    <div class="pf-c-progress__indicator progress-bar" id="progressbar">
+                                                        <span class="pf-c-progress__measure" id="percent"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="pf-c-card">
+                        <div class="pf-c-card__header">
+                            <div class="pf-c-card__title">
+                                <h2>Tiers</h2>
+                            </div>
+                        </div>
+                        <div class="pf-c-card__body" id="tiersError">
+                            <table class="ct-table pf-c-table pf-m-grid-md pf-m-compact">
+                                <thread>
+                                    <tr>
+                                        <th class="pf-m-width-20 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Name</span>
+                                        </th>
+                                        <th class="pf-m-width-20 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Path</span>
+                                        </th>
+                                        <th class="pf-m-width-20 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Capacity</span>
+                                        </th>
+                                        <th class="pf-m-width-20 pf-c-table__sort">
+                                            <span class="pf-c-table__text bold-text">Usage / Quota</span>
+                                        </th>
+                                    </tr>
+                                </thread>
+                                <tbody id="tiers">
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article id="conflict"></article>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <script src="autotierStatus.js"></script>
+</body>
+
+</html>

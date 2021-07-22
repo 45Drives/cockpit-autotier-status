@@ -1,0 +1,8 @@
+.bold-text {
+  font-weight: bold;
+}
+
+.error-message {
+  font-weight: bold;
+  color: red;
+}
